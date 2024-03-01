@@ -3,6 +3,7 @@ package com.example.tictactoekotlin
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var textViewPlayer1: TextView
     private lateinit var textViewPlayer2: TextView
-    private lateinit var buttons: Array<Array<Button?>>
+    private lateinit var buttons: Array<Array<Button>>
     private lateinit var resetButton: Button
 
     private var player1Turn = true
@@ -66,11 +67,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkForWinner(): Boolean {
-        val board = Array(3) { arrayOfNulls<String>(3) }
-
-        for (i in 0..2) {
-            for (j in 0..2) {
-                board[i][j] = buttons[i][j]?.text.toString()
+        val board = Array(3) { row ->
+            Array(3) { col ->
+                buttons[row][col].text.toString()
             }
         }
 
@@ -119,7 +118,7 @@ class MainActivity : AppCompatActivity() {
     private fun resetGame() {
         for (i in 0..2) {
             for (j in 0..2) {
-                buttons[i][j]?.text = ""
+                buttons[i][j].text = ""
             }
         }
 

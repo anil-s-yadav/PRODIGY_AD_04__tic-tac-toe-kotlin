@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TicTacToeKotlin" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.TicTacToeKotlin" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.TicTacToeKotlin" parent="Base.Theme.TicTacToeKotlin" />
+    <style name="Theme.TicTacToeKotlin" parent="Base.Theme.TicTacToeKotlin" >
+        <item name="android:statusBarColor">#2196F3</item>
+    </style>
 </resources>
